@@ -15,11 +15,16 @@ Usage
 ```
 
 ```javascript
-	//setup the slideshow with callbacks
 	//you get a nice object back that you can monitor and call functions on
+	$slideshow = $('#slider img').dumbslider();
+	
+	//change settings, add callbacks
 	$slideshow = $('#slider img').dumbslider({
-		onSetup: fucntion(){},
-		onBeforeChange: function(curr_img, prev_img, $slides, index){
+		  delay: 6000
+		, fadeTime: 300
+		, onSetup: function(curr_img, dumbslider, $slides, index){}
+		, onAfterChange: function(curr_img, prev_img, $slides, index){}
+		, onBeforeChange: function(curr_img, prev_img, $slides, index){
 			console.log( curr_img.data('something') );
 		}
 	});

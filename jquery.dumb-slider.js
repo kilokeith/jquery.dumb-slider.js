@@ -61,7 +61,7 @@
 			
 			this.setup = function(){
 				$self.current = (  $self.$slides.filter('.active').length > 0 )? $self.$slides.filter('.active').first(): $self.$slides.first();
-				$self.settings.onSetup($self.current, {}, $self.$slides, 0);
+				$self.settings.onSetup($self.current, $self, $self.$slides, 0);
 				$self.start();
 				return $self;
 			}
