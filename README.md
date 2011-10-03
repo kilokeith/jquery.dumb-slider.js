@@ -20,6 +20,7 @@ Open the code and check it out. Easy stuffs, really.
 ```
 
 Or add some external nav to it
+
 ```javascript
 	//add click events to little slideshow dots
 	$'.slideshow_nav').delegate('span', 'click', function(){
@@ -37,6 +38,7 @@ Or add some external nav to it
 		<span></span>
 	</div>
 ```
+
 ```less
 	.slideshow_nav {
 		margin: 20px 0 20px 0;
