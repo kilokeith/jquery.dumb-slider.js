@@ -34,8 +34,8 @@ Or add some external nav to it
 
 ```javascript
 	//add click events to little slideshow dots
-	$'.slideshow_nav').delegate('span', 'click', function(){
-		var indx = $slideshow_navs.index(this);
+	$('.slideshow_nav').delegate('span', 'click', function(){
+		var indx = $('.slideshow_nav span').index(this);
 		$slideshow.stop();
 		$slideshow.goto(indx);
 		$slideshow.start();
