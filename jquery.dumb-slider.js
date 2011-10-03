@@ -7,7 +7,7 @@
 			
 			  this.$slides = $slides
 			, this.current
-			, timer = 0
+			, timer = null
 			;
 			
 			this.settings = $.extend({
