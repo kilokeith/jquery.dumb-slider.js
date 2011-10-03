@@ -21,10 +21,11 @@
 			
 			
 			this.start = function(){
+				if($self.timer) $self.stop();
 				$self.timer = setInterval($self.next, $self.settings.delay);
 			}
 			this.stop = function(){
-				clearInterval($self.timer);
+				if($self.timer) clearInterval($self.timer);
 			}
 			
 			this.goto = function(indx){
