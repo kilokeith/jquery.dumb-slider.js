@@ -1,4 +1,10 @@
+Dumb Slider
+=============================
+
 Open the code and check it out. Easy stuffs, really.
+
+Usage
+--------
 
 ```html
 	<div id="slider">
