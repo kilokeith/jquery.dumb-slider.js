@@ -13,6 +13,7 @@
 			this.settings = $.extend({
 				  delay: 6000
 				, fadeTime: 300
+				, autoStart: true
 				, onSetup: function(){}
 				, onBeforeChange: function(){}
 				, onAfterChange: function(){}
@@ -63,7 +64,7 @@
 			this.setup = function(){
 				$self.current = (  $self.$slides.filter('.active').length > 0 )? $self.$slides.filter('.active').first(): $self.$slides.first();
 				$self.settings.onSetup($self.current, $self, $self.$slides, 0);
-				$self.start();
+				if($self.settings.autoStart) $self.start();
 				return $self;
 			}
 			

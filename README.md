@@ -22,6 +22,7 @@ Usage
 	$slideshow = $('#slider img').dumbslider({
 		  delay: 6000
 		, fadeTime: 300
+		, autoStart: true
 		, onSetup: function(curr_img, dumbslider, $slides, index){}
 		, onAfterChange: function(curr_img, prev_img, $slides, index){}
 		, onBeforeChange: function(curr_img, prev_img, $slides, index){
