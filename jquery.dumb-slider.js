@@ -21,18 +21,22 @@
 			
 			
 			
-			this.start = function(){
-				if($self.timer) $self.stop();
-				$self.timer = setInterval($self.next, $self.settings.delay);
+			this.start = function(wait_time){
+				//can pass in an extra time to wait before moving on
+				var delay = wait_time || $self.settings.delay;
+				$self.stop();
+				$self.timer = setTimeout($self.next, delay);
 			}
 			this.stop = function(){
-				if($self.timer) clearInterval($self.timer);
+				if($self.timer) clearTimeout($self.timer);
 			}
 			
-			this.goto = function(indx){
+			this.goto = function(indx, wait_time){
 				var prev_img = $self.$slides.eq($self.current)
 				  , next_img = $self.$slides.eq(indx)
 				  ;
+				//clear the old timeout
+				$self.stop();
 				
 				$self.settings.onBeforeChange(next_img, prev_img, $self.$slides, indx);
 				
@@ -41,6 +45,9 @@
 					$self.current.fadeIn($self.settings.fadeTime, function(){
 						
 						$self.settings.onAfterChange(next_img, prev_img, $self.$slides, indx);
+						//restart the timer
+						$self.start(wait_time);
+						
 					});
 				});
 			}
