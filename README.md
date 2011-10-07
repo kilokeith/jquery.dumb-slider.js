@@ -1,4 +1,4 @@
-Dumb Slider
+Dumb Slider - an image(?) rotator
 =============================
 
 Open the code and check it out. Easy stuffs, really.
@@ -37,9 +37,8 @@ Or add some external nav to it
 	//add click events to little slideshow dots
 	$('.slideshow_nav').delegate('span', 'click', function(){
 		var indx = $('.slideshow_nav span').index(this);
-		$slideshow.stop();
-		$slideshow.goto(indx);
-		$slideshow.start();
+		//goto auto stops the show, and now you can pass an extra delay (for waiting on users)
+		$slideshow.goto(indx, 8000);
 	});
 ```
 
